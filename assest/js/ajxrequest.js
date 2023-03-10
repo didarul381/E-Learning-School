@@ -90,10 +90,44 @@ function addStu()
 }
 //Empty all fileds
 
-
 function clearRegFileds(){
    $("#stuRegForm").trigger("reset");
    $("#statusMsg1").html(" ");
    $("#statusMsg2").html(" ");
    $("#statusMsg3").html(" ");
+}
+
+//Ajax call for student Login verification
+function  checkStuLogin(){
+   console.log("Log");
+   var stuLogEmail=$("#stuLogemail").val();
+   var stuPass=$("#stuLogpassword").val();
+   $.ajax({
+
+      url:'student/addstudent.php',
+      method:"POST",
+      data:{
+         checkLogEmail:"checkLogEmail",
+         stuLogEmail:stuLogEmail,
+         stuPass:stuPass,
+
+      },
+      success:function(data){
+         console.log(data);
+         if(data==0){
+            $("#StatusLogMsg").html('<smallclass="alert alert-danger">Invalid email id or password</smallclass=>');
+
+         }else if(data==1){
+            $("#StatusLogMsg").html(
+            '<div class="spinner-border text-success" role="status"></div>'
+            
+            );
+            setTimeout(()=>{
+               window.location.href="index.php";
+            },1000);
+         }
+      }
+   })
+
+
 }

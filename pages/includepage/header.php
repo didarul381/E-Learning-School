@@ -81,10 +81,24 @@ input[type=submit]:hover {
         <li class="nav-item"><a class="nav-link text-light" href="index.php">Home</a></li>
         <li class="nav-item"><a class="nav-link text-light" href="courses.php">Coures</a></li>
         <li class="nav-item"><a class="nav-link text-light" href="paymentatus.php">Payment Status</a></li>
-        <li class="nav-item"><a class="nav-link text-light" href="">Profile</a></li>
-        <li class="nav-item"><a class="nav-link text-light" href="">Logout</a></li>
-        <li class="nav-item"><a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal-1" class="nav-link text-light" href="">Login</a></li>
+        <?php
+        session_start();
+        if(isset($_SESSION['is_login'])){
+          echo'
+          <li class="nav-item"><a class="nav-link text-light" href="">Profile</a></li>
+        <li  class="nav-item"><a href="logout.php" class="nav-link text-light" href="">Logout</a></li>
+          ';
+        }else{
+          echo'
+          <li class="nav-item"><a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal-1" class="nav-link text-light" href="">Login</a></li>
          <li class="nav-item"><a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class=" nav-link text-light" href="">Sing up</a></li>
+          ';
+        } 
+        ?>
+        <!-- <li class="nav-item"><a class="nav-link text-light" href="">Profile</a></li>
+        <li class="nav-item"><a class="nav-link text-light" href="">Logout</a></li> -->
+        <!-- <li class="nav-item"><a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal-1" class="nav-link text-light" href="">Login</a></li>
+         <li class="nav-item"><a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class=" nav-link text-light" href="">Sing up</a></li> -->
         <li class="nav-item"><a class="nav-link text-light" href="">Feedback</a></li>
         <li class="nav-item"><a class="nav-link text-light" href="">Contact</a></li>
         

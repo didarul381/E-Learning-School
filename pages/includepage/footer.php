@@ -56,11 +56,12 @@
     <input type="password" id="stuLogpassword" name="stuLogpassword" placeholder="Your password..">
     
 
-    <input type="submit" value="Submit">
+    <!-- <input  type="submit" value="Submit"> -->
   </form>
       </div>
       <div class="modal-footer">
-      <button type="button" id="stuLoginbtn" class="btn btn-primary">Login</button>
+        <small id="StatusLogMsg"></small>
+      <button onclick="checkStuLogin()" type="button" id="stuLoginbtn" class="btn btn-primary">Login</button>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cancle</button>
        
       </div>
@@ -81,17 +82,18 @@
       </div>
       <div class="modal-body">
       <form id=" adminLoginForm" action="" method="post">
-    <label for=" adminLogemail"> Email</label>
-    <input type="email" id=" adminLogemail" name=" adminLogemail" placeholder="Your email.">
-    <label for=" adminLogpassword">Password</label>
-    <input type="password" id=" adminLogpassword" name=" adminLogpassword" placeholder="Your password..">
+    <label for="adminLogemail"> Email</label>
+    <input type="email" id="adminLogemail" name=" adminLogemail" placeholder="Your email.">
+    <label for="adminLogpassword">Password</label>
+    <input type="password" id="adminLogpassword" name=" adminLogpassword" placeholder="Your password..">
     
     <!-- <input type="submit" value="Submit"> -->
   </form>
       </div>
       <div class="modal-footer">
-      <button type="button" id=" adminLoginbtn" class="btn btn-primary">Login</button>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cancle</button>
+      <small id="StatusAdminLogMsg"></small>
+      <button  onclick="checkAdminLogin()" type="button" id="adminLoginbtn" class="btn btn-primary">Login</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">cancle</button>
        
       </div>
     </div>
@@ -110,8 +112,10 @@
 
 <!-- Fontwasome Js -->
 <script  src="./assest/js/all.min.js"></script>
-<!-- Fontwasome Js -->
+<!-- ajxrequest Js -->
 <script  src="./assest/js/ajxrequest.js"></script>
+<!-- ajxrequest Js -->
+<script  src="./assest/js/admin_ajx.js"></script>
 
 
 <script>
