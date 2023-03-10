@@ -17,7 +17,7 @@
        <!-- custom css -->
        <link rel="stylesheet" href="./assest/css/style.css">
 </head>
-<style>
+ <style>
  
 input[type=text], select, textarea {
   width: 100%;
