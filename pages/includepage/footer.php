@@ -114,7 +114,7 @@
 <script  src="./assest/js/all.min.js"></script>
 <!-- ajxrequest Js -->
 <script  src="./assest/js/ajxrequest.js"></script>
-<!-- ajxrequest Js -->
+<!-- admin ajxrequest Js -->
 <script  src="./assest/js/admin_ajx.js"></script>
 
 

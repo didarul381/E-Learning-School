@@ -18,7 +18,7 @@ if(isset($_POST['cheackemail']) && isset($_POST['stuemail'])){
 
 
 
-//Insert student
+//Insert Registration student
 if(isset($_POST['stusingup'])&& $_POST['stuname'] &&  $_POST['stuemail']&& $_POST['stupassword']){
 
    $stuname= $_POST['stuname'];
@@ -52,7 +52,6 @@ if(isset($_POST["checkLogEmail"]) && isset($_POST["stuLogEmail"]) && isset($_POS
   $row=$result->num_rows;
 
   if($row===1){
-   
     $_SESSION['is_login']=true;
     $_SESSION['stuLogEmail']=$stuLogEmail;
     echo json_encode($row);
