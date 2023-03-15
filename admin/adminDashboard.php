@@ -1,4 +1,21 @@
 <?php include_once('./admin_include/header.php')  ?>
+<?php 
+if(!isset($_SESSION)){
+session_start();
+
+}
+
+include_once('./admin_include/header.php');
+include_once('../dbConnection.php');
+
+if(isset($_SESSION['is_admin_login'])){
+    $adminEmail= $_SESSION['adminLogemail'];
+}else{
+//    echo "<script>location.href='../index.php';</script>";
+header('Location:../index.php');
+}
+
+?>
 <div class="col-sm-9 mt-5">
 <div class="row text-center">
 

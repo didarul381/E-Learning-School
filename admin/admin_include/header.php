@@ -9,6 +9,7 @@
      <!-- fontwasome css -->
      <link rel="stylesheet" href="../assest/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
     <title>Desh Board</title>
 </head>
 <body>
@@ -50,7 +51,7 @@
              <a class="nav-link" href="#"><i class="fas fa-table"></i>Change password</a>
             </li>
             <li class="nav-item">
-             <a class="nav-link" href="../logout.php"><i class="fas fa-table"></i>Payment Status</a>
+             <a class="nav-link" href="../logout.php"><i class="fas fa-table"></i>Logout</a>
             </li>
 
         </ul>
