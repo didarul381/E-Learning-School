@@ -1,12 +1,18 @@
-<?php
+<?php 
+if(!isset($_SESSION)){
+session_start();
+
+}
+
 include_once('./admin_include/header.php');
 include_once('../dbConnection.php');
 
-// if($conn->connect_error){
-//   die("Conncetion failed");
-// }else{
-//   echo"connected";
-// }
+if(isset($_SESSION['is_admin_login'])){
+    $adminEmail= $_SESSION['adminLogemail'];
+}else{
+//    echo "<script>location.href='../index.php';</script>";
+header('Location:../index.php');
+}
 
 if(isset($_REQUEST['courseSubmitBtn'])){
   if(($_REQUEST['course_name']=="") ||($_REQUEST['course_author']=="") || ($_REQUEST['course_duration']=="") ||

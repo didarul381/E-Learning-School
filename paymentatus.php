@@ -13,7 +13,7 @@
 
 <!-- start main Content -->
 
-<div class="container">
+<div class="container ">
     <h2 class="text-center my-3">Payment Status</h2>
     <form action=""method="">
         <div class="form-group row">

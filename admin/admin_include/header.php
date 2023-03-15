@@ -32,7 +32,7 @@
              <a class="nav-link" href="courses.php"><i class="fab fa-accessible-icon"></i>Course</a>
             </li>
             <li class="nav-item">
-             <a class="nav-link" href="#"><i class="fab fa-accessible-icon"></i>Lesson</a>
+             <a class="nav-link" href="lesson.php"><i class="fab fa-accessible-icon"></i>Lesson</a>
             </li>
             <li class="nav-item">
              <a class="nav-link" href="#"><i class="fas fa-user"></i>Students</a>
