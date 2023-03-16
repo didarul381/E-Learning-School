@@ -85,7 +85,7 @@ input[type=submit]:hover {
         session_start();
         if(isset($_SESSION['is_login'])){
           echo'
-          <li class="nav-item"><a class="nav-link text-light" href="">Profile</a></li>
+          <li class="nav-item"><a class="nav-link text-light" href="student/studentProfile.php">Profile</a></li>
         <li  class="nav-item"><a href="logout.php" class="nav-link text-light" href="">Logout</a></li>
           ';
         }else{
