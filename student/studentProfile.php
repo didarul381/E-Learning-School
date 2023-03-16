@@ -15,6 +15,7 @@ if(isset($_SESSION['is_login'])){
 header('Location:../index.php');
 }
 
+//find query..
 $sql="SELECT * FROM `student` WHERE stu_email='$stuLogEmail'";
 $result=$conn->query($sql);
 if($result->num_rows==1){
@@ -26,6 +27,8 @@ if($result->num_rows==1){
     $stuImg=$row['stu_img'];
 }
 
+
+//update query..
 if(isset($_REQUEST['updateSubmitBtn'])){
     if(($_REQUEST['stuName']=="")){
         $msg='<div class="alert alert-waring col-sm-6 me-4 mt-2" role="alert">All Filde Required</div>';
