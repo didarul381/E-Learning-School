@@ -57,7 +57,6 @@ if($result->num_rows>0)
      <?php } ?>
  </tbody>
 </table>
-
 <?php }else{
     echo "No couse found";
 } ?>
@@ -69,10 +68,7 @@ if($result->num_rows>0)
 
 </a>
 </div>
-
-
 </div>
-
 </div>
 
 <!-- delte course -->

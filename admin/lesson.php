@@ -14,10 +14,6 @@ if(isset($_SESSION['is_admin_login'])){
 header('Location:../index.php');
 }
 
-
-
-
-
 ?>
 
 
@@ -75,22 +71,44 @@ header('Location:../index.php');
         <td><?php echo $row['lesson_name'] ?></td>
         <td><?php echo $row['lesson_link'] ?></td>
         <td >
-        <form action="courseUpdate.php"  method="POST" class="d-inline">
+        <form action=""  method="POST" class="d-inline">
         <input type="hidden" name="id" value="<?php echo $row['lesson_id']?>">
         <button type="submit" class="btn btn-secondary  ms-3 " name="update" value="update"><i class="fa fa-pen"></i></button>
         </form > 
         <form action=""  method="POST" class="d-inline">
-       <input type="hidden" name="id" value="<?php echo $row['lesson_id']?>">
+       <input type="hidden" name="lesson_id" value="<?php echo $row['lesson_id']?>">
        <button type="submit" class="btn btn-secondary ms-3" name="delete" value="Delete"><i class="fa fa-trash-alt"></i></button>
       </form > 
        </td>
         </tr>
-     <?php  }
-
-
+     
+     <?php } ?>
+     </tbody>
+     </table> 
+     <?php 
+}else{
+    echo'<div class="alter alter-dark mt-4" role="altert">Course Not Found..</div>';
 }
     }
+}
+// lesson delete code
+
+ if(isset($_REQUEST['delete'])){
+    
+    $sql="DELETE FROM lesson WHERE lesson_id={$_REQUEST['lesson_id']}";
+
+    if($conn->query($sql)==TRUE){
+        // echo'<meta http-equiv="refresh" content="0;URL=?deleted"/>';
+        echo "Delete SUCCESSS...";
+
+    }else{
+        echo "Unable to delete";
+    }
   }
+
+//  }
+
+//  }
 ?>
 
 <div >
