@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Learing</title>
+    <title>Bongo-Learners</title>
     <!-- BootsStarp css -->
     <link rel="stylesheet" href="./assest/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assest/css/owl.carousel.min.css">
@@ -71,7 +71,7 @@ input[type=submit]:hover {
 <!-- Start Navigation -->
 <nav class="navbar navbar-expand-sm navbar-light bg-dark fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand text-light" href="index.php">E-Learning</a>
+    <a class="navbar-brand text-light" href="index.php">Ostad</a>
     <span>Learning And Implement</span>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

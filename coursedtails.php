@@ -37,10 +37,11 @@ include('./dbConnection.php')
                 <h5 class="card-title">Course Name:<?php echo $row['course_name'];  ?></h5>
                 <p class="card-text"><?php echo $row['course_desc'];  ?></p>
                 <p class="card-text">Duration:<?php echo $row['course_duration']; ?></p>
-                <form action="checkout.php"method="POST">
+                <form action="checkout.php?course_price=<?php echo $row['course_price'];?>"
+                 method="post">
                 <p>Price:<small><del><?php echo $row['course_orginal_price']; ?></del> <span><?php echo $row['course_price']; ?></span></small></p>
-                <input type="hidden" name="id" value="'$row['course_price']'">
-                <button  type="submit" class="btn btn-primary text-white">Buy Now</button>
+                <input type="hidden" name="id" value=" <?php echo $row['course_price'] ?>">
+                <button  type="submit" class="btn btn-primary text-white">Checkout</button>
                 </form>
             </div>
         </div>
