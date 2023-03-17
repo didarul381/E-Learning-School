@@ -1,5 +1,5 @@
 <?php  include('./pages/includepage/header.php') ?>
-
+<?php  include('./dbConnection.php') ?>
 <!-- start vide background -->
 <div class="container-fluid remove-video-marg">
     <div class="video-parn">
@@ -40,8 +40,34 @@
 <div class="container">
   <h1 class="text-center">Popular coures</h1>
   <div class="row row-cols-1 row-cols-md-3 g-4">
- 
+ <?php 
+  $sql="SELECT * FROM `course` LIMIT 3" ;
+  $result=$conn->query($sql);
+  if($result->num_rows>0){
+    while($row=$result->fetch_assoc()){
+    $course_id=$row['course_id'];?>
+  
   <div class="col">
+    <div class="card">
+      <img src="<?php  echo str_replace('..','.',$row['course_img']);?> "class="card-img-top" alt="python">
+      <div class="card-body">
+        <h5 class="card-title"><?php echo $row['course_name'] ;?></h5>
+        <p class="card-text"> <?php echo $row['course_desc'] ;?> </p>
+      </div>
+      <div class="card-footer d-flex justify-content-between ">
+      <p class="card-text d-inline">Price: <small><del><?php echo $row['course_orginal_price'] ?></del></small>
+    <span class="font-weight-bolder"><?php  echo $row['course_price'] ?></span></p>
+    <a href="coursedtails.php?course_id=<?php echo $course_id ?>" class="btn btn-primary float-right text-light font-weight-bolder">Enrole Now</a>
+    </div>
+    </div>
+  </div>
+
+   
+ <?php }
+ 
+}
+ ?>
+  <!-- <div class="col">
     <div class="card">
       <img src="./assest/images/php.jpg" class="card-img-top" alt="...">
       <div class="card-body">
@@ -96,7 +122,7 @@
     <a href="" class="btn btn-primary float-right text-light font-weight-bolder">Enrole Now</a>
     </div>
     </div>
-  </div>
+  </div> -->
 </div>
 <div class="text-center my-3"><a class="btn btn-primary px-2 " href="">View all course</a></div>
 </div>
