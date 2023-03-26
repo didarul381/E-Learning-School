@@ -6,7 +6,7 @@ if(!isset($_SESSION['is_login'])){
 header('Location:./index.php');
 }else{ 
 $stuLogEmail  = $_SESSION['stuLogEmail'];
-
+echo $stuLogEmail;
 /* PHP */
 $post_data = array();
 $post_data['store_id'] = "didar63a1b0f004df2";
@@ -26,7 +26,7 @@ $post_data['emi_selected_inst'] = "9";
 
 # CUSTOMER INFORMATION
 $post_data['cus_name'] = "Test Customer";
-$post_data['cus_email'] = "test@test.com";
+$post_data['cus_email'] = $stuLogEmail;
 $post_data['cus_add1'] = "Dhaka";
 $post_data['cus_add2'] = "Dhaka";
 $post_data['cus_city'] = "Dhaka";
