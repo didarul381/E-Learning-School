@@ -1,93 +1,47 @@
-<?php include_once('./admin_include/header.php')  ?>
+<?php include_once('./inst-header.php')  ?>
 <?php 
 if(!isset($_SESSION)){
 session_start();
 
 }
 
-include_once('./admin_include/header.php');
+include_once('./inst-header.php');
 include_once('../dbConnection.php');
 
-if(isset($_SESSION['is_admin_login'])){
-    $adminEmail= $_SESSION['adminLogemail'];
+if(isset($_SESSION['is_login'])){
+    $instLogEmail=$_SESSION['instLogEmail'];
 }else{
-//    echo "<script>location.href='../index.php';</script>";
-header('Location:../index.php');
+    echo "<script>location.href='../../E-Learning/index.php';</script>";
+//header('Location:../index.php');
 }
-$c=0;
-$s=0;
-$i=0;
-$sold=0;
-
-$sql="SELECT * FROM course";
-$result=$conn->query($sql);
-if($result->num_rows>0){
-  while($row=$result->fetch_assoc()){
-         $c++;
-  }
-}
-
-$sql="SELECT * FROM student";
-$result=$conn->query($sql);
-if($result->num_rows>0){
-  while($row=$result->fetch_assoc()){
-         $s++;
-  }
-}
-
-$sql="SELECT * FROM courseorder";
-$result=$conn->query($sql);
-if($result->num_rows>0){
-  while($row=$result->fetch_assoc()){
-         $sold++;
-  }
-}
-
-$sql="SELECT * FROM instructor";
-$result=$conn->query($sql);
-if($result->num_rows>0){
-  while($row=$result->fetch_assoc()){
-         $i++;
-  }
-}
-
 
 ?>
 <div class="col-sm-9 mt-5">
 <div class="row text-center">
 
-<div class="col-sm-3 mt-5">
+<div class="col-sm-4 mt-5">
 <div class="card" style="width: 18rem;">
   <div class="card-body">
     <h3 class="card-title">Courses</h3>
-    <p class="card-text"><?php echo $c; ?></p>
+    <p class="card-text">5</p>
     <a href="#" class="btn btn-primary">View</a>
   </div>
 </div>
 </div>
-<div class="col-sm-3 mt-5">
+<div class="col-sm-4 mt-5">
 <div class="card" style="width: 18rem;">
   <div class="card-body">
-    <h3 class="card-title">Student</h3>
-    <p class="card-text"><?php echo $s; ?></p>
+    <h3 class="card-title">Students</h3>
+    <p class="card-text">21</p>
     <a href="#" class="btn btn-primary">View</a>
   </div>
 </div>
 </div>
-<div class="col-sm-3 mt-5">
-<div class="card" style="width: 18rem;">
-<div class="card-body">
-    <h3 class="card-title">Instructor</h3>
-    <p class="card-text"><?php echo $i; ?></p>
-    <a href="#" class="btn btn-primary">View</a>
-  </div>
-</div>
-</div>
-<div class="col-sm-3 mt-5">
+<div class="col-sm-4 mt-5">
 <div class="card" style="width: 18rem;">
 <div class="card-body">
     <h3 class="card-title">Sold</h3>
-    <p class="card-text"><?php echo $sold; ?></p>
+    <p class="card-text">11</p>
     <a href="#" class="btn btn-primary">View</a>
   </div>
 </div>
@@ -135,7 +89,7 @@ if($result->num_rows>0){
     <!-- <a href="../logout.php" class="btn btn-primary ">Logout <Button></Button></a> -->
 
 <!-- include footer -->
-<?php include_once('./admin_include/footer.php')  ?>
+<?php include_once('./inst-footer.php')  ?>
 
 
 

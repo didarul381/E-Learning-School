@@ -43,7 +43,7 @@ if($result->num_rows==1){
 
      <!-- Top navr start -->
      <nav class="navbar  navbar-light bg-dark fixed-top shadow">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0 text-white" href="student/studentProfile.php">E-learning <small class="text-white">Admin Area</small></a>
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0 text-white" href="student/studentProfile.php">E-learning <small class="text-white">Student Area</small></a>
     
 </nav>
 <!-- side bar start -->

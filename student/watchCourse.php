@@ -15,10 +15,13 @@ if(isset($_SESSION['is_login'])){
 header('Location:../index.php');
 }
 ?>
+<div class="col-sm-9">
 <div class="container-fluid">
     <div class="row">
-        <h4 class="text-center">Lessons</h4>
-        <ul id="playlist" class="nav flex flex-colum">
+        <br>
+        <h4 class="text-center  mt-5 ">Lessons</h4>
+       <div class="col-md-3">
+       <ul id="playlist" class="nav flex flex-column">
             <?php  
            
             if(isset($_GET['course_id'])){
@@ -26,11 +29,11 @@ header('Location:../index.php');
               
                 $sql="SELECT * FROM lesson  WHERE course_id ='$course_id'";
                 $result=$conn->query($sql);
-
+                   $i=0;
                 if($result->num_rows>0){
                     while($row=$result->fetch_assoc()){
-
-                        echo'<li class="nav-item border-bottom py-2" movieurl='.$row['lesson_link'].'>
+                            $i++;
+                        echo'<li  class="nav-item border-bottom py-2 " movieurl='.$row['lesson_link'].'>
                            '.$row['lesson_name'].'
                         </li>';
                     }}
@@ -39,10 +42,14 @@ header('Location:../index.php');
             ?>
 
         </ul>
-
-    </div>
-    <div class="col-md-8">
+       </div>
+       <div class="col-md-9 ">
       <video id="videoarea" src="" class="mt-5 w-75 me-3" controls></video>
     </div>
+    </div>
 </div>
+
+    </div>
+   
+    
 <?php  include('./stuInclude/footer.php') ?>

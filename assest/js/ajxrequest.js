@@ -39,7 +39,7 @@ function addStu()
    // console.log(stupassword);
 
 
-   //Cheaking form fikeds on form submmision
+   //Cheaking form fileds on form submmision
    if(stuname.trim()==""){
       $("#statusMsg1").html('<small >Please Enter Name</small>');
       $("#stuname").focus();

@@ -1,3 +1,29 @@
+<?php 
+if(!isset($_SESSION)){
+session_start();
+
+}
+
+include_once('./inst-header.php');
+include_once('../dbConnection.php');
+
+if(isset($_SESSION['is_login'])){
+    $instLogEmail=$_SESSION['instLogEmail'];
+   
+//    echo "<script>location.href='../../E-Learning/index.php';</script>";
+// header('Location:../');
+}
+if(isset($instLogEmail)){
+$sql="SELECT * FROM `instructor` WHERE inst_email='$instLogEmail'";
+$result=$conn->query($sql);
+if($result->num_rows==1){
+    $row=$result->fetch_assoc();
+    $inst_img=$row['inst_img'];
+}
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,14 +35,15 @@
      <!-- fontwasome css -->
      <link rel="stylesheet" href="../assest/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../assest/css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Desh Board</title>
 </head>
 <body>
 
      <!-- Top navr start -->
      <nav class="navbar  navbar-light bg-dark fixed-top shadow">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0 text-white" href="adminDashboard.php">E-learning <small class="text-white">Admin Area</small></a>
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0 text-white" href="adminDashboard.php">E-learning <small class="text-white">Inastructor Area</small></a>
     
 </nav>
 <!-- side bar start -->
@@ -25,11 +52,17 @@
 <nav class=" col-sm-3 col-md-2 bg-light slidbar py-5 d-print-none">
     <div class="slidbar-sticky">
         <ul class="nav flex-column">
-            <li class="nav-item">
-             <a class="nav-link" href="adminDashboard.php"><i class="fas fa-tachometer-alt"></i>Deshboard</a>
+        <li class="nav-item mb-2">
+             <img src="<?php if($inst_img){echo $inst_img;}  ?>" class=" w-50 img-thumbnail rounded-circle" alt="">
             </li>
             <li class="nav-item">
-             <a class="nav-link" href="courses.php"><i class="fab fa-accessible-icon"></i>Course</a>
+             <a class="nav-link" href="inst-deshbord.php"><i class="fas fa-tachometer-alt"></i>Deshboard</a>
+            </li>
+            <li class="nav-item">
+             <a class="nav-link" href="./inst-profile.php"><i class="fas fa-tachometer-alt"></i>profile</a>
+            </li>
+            <li class="nav-item">
+             <a class="nav-link" href="course.php"><i class="fab fa-accessible-icon"></i>My Course</a>
             </li>
             <li class="nav-item">
              <a class="nav-link" href="lesson.php"><i class="fab fa-accessible-icon"></i>Lesson</a>

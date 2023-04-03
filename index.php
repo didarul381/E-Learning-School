@@ -128,7 +128,23 @@
 </div>
 
 <!-- end popular Course -->
+<!-- instractur start -->
 
+<!-- instractur end -->
+<div class="container">
+    <div class="row my-5">
+        <div class="col-md-6">
+            <img src="./assest/images/instructor.jpg" alt="">
+        </div>
+        <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
+            <h2>Become an instructor</h2>
+            <p>
+            Instructors from around the world teach millions of students on Udemy. We provide the tools and skills to teach what you love.
+            </p>
+            <a href="./instructor/instructor_registration.php" class="btn btn-dark text-white">Start teaching today</a>
+        </div>
+    </div>
+</div>
  <!-- start contact us -->
           <?php  include('./pages/includepage/contact.php'); ?>
         <!-- end contact section -->
